@@ -45,9 +45,7 @@
 }
 
 #projects img {
-    object-fit: cover;
     object-position: left;
-    width: 100%; height: 100%;
 }
 
 #projects img:hover {
@@ -56,10 +54,12 @@
 
 #brands img {
     filter: grayscale(1);
+    opacity: 50%;
 }
 
 #brands img:hover {
     filter: grayscale(0);
+    opacity: 100%;
 }
 
 .footer__link .bx {
