@@ -12,6 +12,22 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://tailwindcss.com"></script>
+
+        <style>
+            img {
+                object-postion: top;
+            }
+            
+            .brand-slider {
+            animation: slide 30s linear infinite;
+        }
+        
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        </style>
     </head>
     <body class="bg-purple-100">
         <section class="home__section py-10 md:py-16">
@@ -39,6 +55,58 @@
                 </div>
             </div>
         </section>
+
+        <!-- Brands Section -->
+    <section id="brands" class="py-16 bg-white  overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="relative">
+                <div class="brand-slider flex gap-16 items-center py-8">
+                    <!-- Brand 1 -->
+                    <div class="flex-shrink-0">
+                        <img src="/assets/images/brand-1.png" alt="Brand-1" class="h-16 grayscale hover:grayscale-0 hover:opacity-100 transition">
+                    </div>
+                    
+                    <!-- Brand 2 -->
+                    <div class="flex-shrink-0">
+                        <img src="/assets/images/brand-2.png" alt="Brand-2" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
+                    </div>
+                    
+                    <!-- Brand 3 -->
+                    <div class="flex-shrink-0">
+                        <img src="/assets/images/brand-3.png" alt="Brand-3" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
+                    </div>
+                    
+                    <!-- Brand 4 -->
+                    <div class="flex-shrink-0">
+                        <img src="/assets/images/brand-4.png" alt="Brand-4" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
+                    </div>
+                    
+                    <!-- Brand 5 -->
+                    <div class="flex-shrink-0">
+                        <img src="/assets/images/brand-5.png" alt="Brand-5" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
+                    </div>
+                    
+                    <!-- Brand 6 -->
+                    <div class="flex-shrink-0">
+                        <img src="/assets/images/brand-1.png" alt="Brand-1" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
+                    </div>
+                    
+                    <!-- Duplicate for infinite loop -->
+                    <div class="flex-shrink-0">
+                        <img src="/assets/images/brand-2.png" alt="Brand-2" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
+                    </div>
+                    
+                    <div class="flex-shrink-0">
+                        <img src="/assets/images/brand-3.png" alt="Brand-3" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
+                    </div>
+                    
+                    <div class="flex-shrink-0">
+                        <img src="/assets/images/brand-4.png" alt="Brand-4" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
         <section class="cards__section py-10 md:py-16">
 
@@ -90,85 +158,70 @@
 
         </section>
 
-        <section class="portfolio__section py-10 md:py-16">
-
-            <div class="container max-w-screen-xl mx-auto px-4">
-
-                <div class="portfolio__container flex flex-col lg:flex-row justify-between">
-                    <div class="portfolio__header mb-10 lg:mb-0">
-                        <h1 class="portfolio__header__title font-medium text-purple-700 text-3xl md:text-4xl mb-5">Portfolio</h1>
-
-                        <p class="portfolio__header__text font-normal text-purple-500 text-xs md:text-base">I have brought here my biggest and favorite works <br> as a professional.</p>
-                    </div>
-
-                    <div class="space-y-24">
-                        <div class="portfolio__item flex space-x-6">
-                            <h1 class="font-normal text-purple-800 text-3xl md:text-4xl">01</h1>
-
-                            <span class="w-28 h-0.5 bg-purple-300 mt-5"></span>
-
-                            <div>
-                                <div class="portfolio__item__image">
-                                    <img src="/assets/image/web/ClacketyAI.png"/>
-                                </div>
-                                <h1 class="font-normal text-purple-800 text-3xl md:text-4xl mb-5">
-                                    ClacketyAI – Time Management Platform
-                                </h1>
-
-                                <p class="font-normal text-purple-500 text-sm md:text-base">
-                                    Built an intelligent time-management web app that helps users plan, track, 
-                                    and optimize their day. Features real-time scheduling, 
-                                    smart reminders, and analytics—streamlining productivity for hundreds of daily users.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio__item flex space-x-6">
-                            <h1 class="font-normal text-purple-800 text-3xl md:text-4xl">02</h1>
-
-                            <span class="w-28 h-0.5 bg-purple-300 mt-5"></span>
-
-                            <div>
-                                <div class="portfolio__item__image">
-                                    <img src="/assets/image/web/SensAI/SensAI Mental Wellness website.png" />
-                                </div>
-                                <h1 class="font-normal text-purple-800 text-3xl md:text-4xl mb-5">
-                                    SensAI – Mental Wellness Tracker
-                                </h1>
-
-                                <p class="font-normal text-purple-500 text-sm md:text-base">
-                                    Developed a personalized mental wellness app that supports mood tracking, journaling, 
-                                    and mindfulness exercises. Leveraging AI insights, 
-                                    it promotes emotional awareness and healthier daily habits for consistent user engagement.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio__item flex space-x-6">
-                            <h1 class="font-normal text-purple-700 text-3xl md:text-4xl">03</h1>
-
-                            <span class="w-28 h-0.5 bg-purple-300 mt-5"></span>
-
-                            <div>
-                                <div class="portfolio__item__image">
-                                    <img src="/assets/image/web/Streem Movie Website.png" />
-                                </div>
-                                <h1 class="font-normal text-purple-700 text-3xl md:text-4xl mb-5">
-                                    Streem – Movie Streaming Platform
-                                </h1>
-
-                                <p class="font-normal text-purple-500 text-sm md:text-base">
-                                    Created a high-performance movie streaming website offering seamless content discovery, 
-                                    personalized recommendations, and smooth playback. Optimized for desktop, 
-                                    it provides users with a rich, engaging cinematic experience.
-                                </p>
-                            </div>
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                        <div class="relative rounded-full px-3 py-1 text-sm/6 text-purple-700 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                        Projects
                         </div>
                     </div>
+                    <h2 class="text-4xl font-bold mb-4">My <span class="text-purple-700">Projects</span></h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore our portfolio of premium web development projects for discerning clients.</p>
                 </div>
-
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <a href="https://prime-devs.vercel.app/" class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                        <img src="/assets/images/web/prime-devs.png" alt="Project" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2">Prime Devs</h3>
+                            <p class="text-gray-600 mb-4">
+                                A Nigerian-based web/tech agency.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">React</span>
+                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 2 -->
+                    <a href="https://urban-wellness.vercel.app/" class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                        <img src="/assets/images/web/urban.png" alt="Project" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2">UrbanWellness</h3>
+                            <p class="text-gray-600 mb-4">
+                                A fictional fitness website.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">React</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 3 -->
+                    <a href="#" class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                        <img src="/assets/images/Streem Movie Website.png" alt="Project" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2">Streem Movie Website</h3>
+                            <p class="text-gray-600 mb-4">
+                                An online movie streaming website
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">CSS3</span>
+                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">VanillaJS</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="#" class="inline-block bg-purple-700 hover:bg-purple-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition">View All Projects</a>
+                </div>
             </div>
-
         </section>
 
         <section class="education__section py-10 md:py-16">
@@ -254,84 +307,6 @@
                         </div>
                     </div>
 
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- <section class="skills__section py-10 md:py-16">
-
-            <div class="container max-w-screen-xl mx-auto px-4">
-
-                <div class="text-center">
-                    <p class="font-medium text-purple-700 text-xs md:text-base">In my years of experience, I use @react for front-end projects. I’m an avid programmer, so I create designs based on the <br> weekend @figmadesign.</p>
-                </div>
-
-            </div>
-
-        </section> -->
-
-        <!-- <section class="experience__section py-10 md:py-16">
-
-            <div class="container max-w-screen-xl mx-auto px-4">
-
-                <h1 class="font-medium text-purple-700 text-3xl md:text-4xl mb-5">Experience</h1>
-
-                <p class="font-normal text-purple-500 text-xs md:text-base mb-20">
-                    My journey in building user-focused web solutions
-                </p>
-
-                <div class="flex flex-col lg:flex-row justify-between">
-                    <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
-                        <h6 class="font-medium text-purple-400 text-base uppercase">Company</h6>
-
-                        <!-- <p class="font-semibold text-purple-600 text-base">Company Name <span class="font-normal text-purple-300">/ Location</span></p> -->
-                    <!-- </div>
-
-                    <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
-                        <h6 class="font-medium text-purple-400 text-base uppercase">Position</h6>
-
-                        <p class="font-normal text-purple-400 text-base">Front-End Developer</p> -->
-                    <!-- </div> -->
-
-                    <!-- <div class="space-y-8 md:space-y-16">
-                        <h6 class="font-medium text-purple-400 text-base uppercase">Year</h6>
-
-                        <p class="font-normal text-purple-400 text-base">0000</p>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <p class="font-medium text-purple-300 mt-4 text-xs md:text-base">
-                        Although I haven't yet had the opportunity to work with a company, <br>
-                        I’m excited to bring my skills and passion to a tech organization..</p>
-                </div> --> 
-                
-            <!-- </div> -->
-
-        <!-- </section> -->
-
-        <section class="brands__section py-10 md:py-16">
-
-            <div class="container max-w-screen-xl mx-auto px-4">
-
-                <h1 class="brands__section__title font-medium text-purple-700 text-3xl md:text-4xl mb-5">Brands</h1>
-
-                <p class="brands__section__text font-normal text-purple-500 text-xs md:text-base mb-10 md:mb-20">
-                    Companies I've partnered with to create impactful solutions
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    <img src="assets/image/brand-1.png" class="brands__section__image">
-
-                    <img src="assets/image/brand-2.png" class="brands__section__image">
-
-                    <img src="assets/image/brand-3.png" class="brands__section__image">
-
-                    <img src="assets/image/brand-4.png" class="brands__section__image">
-
-                    <img src="assets/image/brand-5.png" class="brands__section__image">
                 </div>
 
             </div>
