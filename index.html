@@ -10,9 +10,15 @@
         <link rel="shortcut icon" href="/assets/image/favicon.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .font-tiktok {
+            font-family: 'TikTok Sans', sans-serif;
+        }
+    </style>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <script src="https://tailwindcss.com"></script>
 
         <style>
             img {
@@ -55,58 +61,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Brands Section -->
-    <section id="brands" class="py-16 bg-purple-50  overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="relative">
-                <div class="brand-slider flex gap-16 items-center py-8">
-                    <!-- Brand 1 -->
-                    <div class="flex-shrink-0">
-                        <img src="/assets/image/brand-1.png" alt="Brand-1" class="h-16 grayscale hover:grayscale-0 hover:opacity-100 transition">
-                    </div>
-                    
-                    <!-- Brand 2 -->
-                    <div class="flex-shrink-0">
-                        <img src="/assets/image/brand-2.png" alt="Brand-2" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
-                    </div>
-                    
-                    <!-- Brand 3 -->
-                    <div class="flex-shrink-0">
-                        <img src="/assets/image/brand-3.png" alt="Brand-3" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
-                    </div>
-                    
-                    <!-- Brand 4 -->
-                    <div class="flex-shrink-0">
-                        <img src="/assets/image/brand-4.png" alt="Brand-4" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
-                    </div>
-                    
-                    <!-- Brand 5 -->
-                    <div class="flex-shrink-0">
-                        <img src="/assets/image/brand-5.png" alt="Brand-5" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
-                    </div>
-                    
-                    <!-- Brand 6 -->
-                    <div class="flex-shrink-0">
-                        <img src="/assets/image/brand-1.png" alt="Brand-1" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
-                    </div>
-                    
-                    <!-- Duplicate for infinite loop -->
-                    <div class="flex-shrink-0">
-                        <img src="/assets/image/brand-2.png" alt="Brand-2" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
-                    </div>
-                    
-                    <div class="flex-shrink-0">
-                        <img src="/assets/image/brand-3.png" alt="Brand-3" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
-                    </div>
-                    
-                    <div class="flex-shrink-0">
-                        <img src="/assets/image/brand-4.png" alt="Brand-4" class="h-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
         <section class="cards__section py-10 md:py-16">
 
@@ -328,81 +282,6 @@
 
         </section>
 
-        <section class="testimonial__section py-10 md:py-16">
-
-            <div class="container max-w-screen-xl mx-auto px-4">
-
-                <h1 class="testimonial__section-header  text-purple-700 text-3xl md:text-4xl mb-5">Testimonial</h1>
-
-                <p class="testimonial__section-text font-normal text-purple-500 text-xs md:text-base mb-10 md:mb-20">
-                    What colleagues and clients say about my projects
-                </p>
-
-                <div class="testimonial__section_review grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-purple-50 px-8 py-10 rounded-md">
-
-                        <p class="testimonial__section_review_text font-normal text-purple-500 text-md mb-4">
-                            Incredible work. <br>
-                            Samuel Amanze brought our vision for GreenGrocer to life with a sleek, <br>
-                            user-friendly design that our customers love. Fast, responsive, and effortlessly <br>
-                            on-brand. A true frontend pro.
-                        </p>
-
-                        <h6 class="testimonial__section_review_name font-semibold text-purple-500 text-md">Stephen Olayiwola <span class="font-medium text-purple-300 text-sm">- CEO at GreenGrocer</span></h6>
-                    </div>
-
-                    <div class="bg-purple-50 px-8 py-10 rounded-md">
-
-                        <p class="testimonial__section_review_text font-normal text-purple-500 text-md mb-4">
-                            Working with Samuel was a dream. <br>
-                            The SensAI site feels calm, modern, and intuitive—exactly what our users needed. <br>
-                            Clean design, seamless UX, and delivered flawlessly. <br>
-                            Can’t recommend enough.
-                        </p>
-
-                        <h6 class="testimonial__section_review_name font-semibold text-purple-500 text-md">Prime Devs <span class="font-medium text-purple-300 text-sm">- CEO at SensAI</span></h6>
-                    </div>
-
-                    <div class="bg-purple-50 px-8 py-10 rounded-md">
-
-                        <p class="testimonial__section_review_text font-normal text-purple-500 text-md mb-4">
-                            Streem needed a site that felt fast, fun, and <br>
-                            binge-worthy—and Samuel Amanze nailed it. <br>
-                            The UI is slick, the vibe is cinematic, and users are hooked. Absolute frontend brilliance.
-                        </p>
-
-                        <h6 class="testimonial__section_review_name font-semibold text-purple-500 text-md">Bayo Samson <span class="font-medium text-purple-300 text-sm">- CEO, Streem</span></h6>
-                    </div>
-
-                    <div class="bg-purple-50 px-8 py-10 rounded-md">
-
-                        <p class="testimonial__section_review_text font-normal text-purple-500 text-md mb-4">
-                            We partnered with Samuel to redesign <br>
-                            ClacketyAI, and the result speaks for itself. <br>
-                            The site is sleek, efficient, and perfectly aligned with our focus on productivity. <br>
-                            User-friendly, fast, and perfectly designed to help people <br>
-                            optimize their time—couldn't be happier with the outcome.
-                        </p>
-
-                        <h6 class="testimonial__section_review_name font-semibold text-purple-500 text-md">Gaji Yaqub <span class="font-medium text-purple-300 text-sm">- CEO at ClacketyAI</span></h6>
-                    </div>
-
-                    <div class="bg-purple-50 px-8 py-10 rounded-md">
-
-                        <p class="testimonial__section_review_text font-normal text-purple-500 text-md mb-4">
-                            I couldn’t be happier with the work Samuel did on my personal website. <br>
-                            It’s clean, professional, and incredibly easy to navigate. Every detail is spot-on, <br>
-                            and I’m proud to show it off. Truly top-notch design and development!
-                        </p>
-
-                        <h6 class="testimonial__section_review_name font-semibold text-purple-500 text-md">Elijah Tomisin <span class="font-medium text-purple-300 text-sm">- </span></h6>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
         <footer class="footer__section py-10 md:py-16 mb-20 md:mb-40 lg::mb-52">
 
             <div class="container max-w-screen-xl mx-auto px-4">
@@ -443,4 +322,5 @@
         </footer>
     </body>
 </html>
+
 
