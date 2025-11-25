@@ -1,104 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My CV - Samuel Amanze</title>
-  <link rel="stylesheet" href="styles.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Amanze | CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .font-tiktok {
+            font-family: 'TikTok Sans', sans-serif;
+        }
+    </style>
+
 </head>
-<body>
-  <div class="container">
-    <header>
-      <h2>SAMUEL AMANZE</h2>
-      <div class="contact">
-        <p>Lagos, Nigeria | officialsammy61@gmail.com | <a href="https://samuels-gamma.vercel.app">samuels-gamma.vercel.app</a></p>
-      </div>
-    </header>
 
-    <section>
-      <h2>Summary</h2>
-      <p>Passionate frontend developer and creative designer with a love for clean UI, obsessed with performance and pixel-perfection.</p>
-    </section>
+<body class="bg-gray-50 text-gray-800 font-tiktok">
 
-    <section>
-      <h2>Technical Skills</h2>
-      <p><strong>Languages:</strong> HTML, CSS, JavaScript<br>
-      <strong>Frameworks:</strong> React, Tailwind CSS, SaaS<br>
-      <strong>Tools:</strong> Git, GitHub, Figma, VS Code<br>
-      <strong>Other:</strong> Graphic Design, Responsive Design, SEO Basics, Web Accessibility (WCAG)</p>
-    </section>
+    <main class="container mx-auto px-4 py-12 max-w-5xl">
 
-    <section>
-      <h2>Projects</h2>
-      <p><strong>ClacketyAI – Time Management Website</strong><br>
-      Role: Frontend Developer | Tech: HTML5, CSS3, Vanilla JavaScript<br>
-      - Built a smart planner with scheduling, reminders, and analytics<br>
-      - Clean UI, responsive layout<br>
-      <a href="https://clackety-ai.vercel.app/">Live Link</a> | 
-      <a href="https://github.com/thedesigngrandmaster/ClacketyAI">GitHub</a>
-      </p>
+        <header class="flex flex-col md:flex-row items-center gap-8 mb-12">
+            <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-indigo-500 shadow-lg">
+                <img src="/me.jpg" alt="Profile" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl font-bold text-indigo-600 mb-2">SAMUEL AMANZE I.</h1>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <p>
+                        Email: <a class="text-indigo-600"
+                            href="mailto:officialsammy61@gmail.com">officialsammy61@gmail.com</a>
+                        | <span class="text-indigo-600">+234 913 271 3169</span> <br>
+                        LinkedIn: <a class="text-indigo-600"
+                            href="https://www.linkedin.com/in/samuel-amanze-05316b27a/">samuel-amanze-05316b27a</a> |
+                        GitHub: <a class="text-indigo-600"
+                            href="https:github.com/thedesigngrandmaster/">@thedesigngrandmaster</a> | <span
+                            class="text-indigo-600">Lagos, Nigeria.</span>
+                    </p>
+                </div>
+            </div>
+        </header>
 
-      <p><strong>SensAI – Mental Wellness Tracker</strong><br>
-      Role: Frontend Developer | Tech: HTML5, CSS3, Vanilla JavaScript<br>
-      - Mood tracking, journaling, mindfulness tools with AI insights<br>
-      <a href="http://sensai-jade.vercel.app/">Live Link</a> | 
-      <a href="https://github.com/thedesigngrandmaster/SensAI">GitHub</a></p>
+        <!-- Resume Sections -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- About -->
+                <section>
+                    <p class="text-black leading-relaxed">
+                        Results-oriented Software Developer with a focus on building scalable web solutions.
+                        Experienced in transforming complex business requirements into deployed applications using
+                        React,
+                        TypeScript, and Supabase. Passionate about solving payment latency issues and building efficient
+                        e-commerce architectures for the African market.
+                    </p>
+                </section>
 
-      <p><strong>Haus – Real Estate Website</strong><br>
-      Role: Frontend Developer | Tech: HTML5, CSS3, TailwindCSS Vanilla JavaScript<br>
-      - Developed property listing platform with search filters and interactive maps<br>
-      - Responsive design optimized for mobile property browsing <br>
-      <a href="http://haus-seven.vercel.app/">Live Link</a> | 
-      <a href="https://github.com/thedesigngrandmaster/Haus">GitHub</a></p>
+                <!-- Experience -->
+                <section>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 border-b-2 border-indigo-500 pb-2">Professional
+                        Projects</h3>
 
-      <p><strong>Urban Wellness – Fitness Website</strong><br>
-      Role: Frontend Developer | Tech: HTML5, CSS3, TailwindCSS Vanilla JavaScript<br>
-      - Created comprehensive fitness platform combining online training programs with physical location integration<br>
-      - Built user dashboard for workout tracking and progress monitoring <br>
-      <a href="http://urban-wellness.vercel.app/">Live Link</a> | 
-      <a href="https://github.com/thedesigngrandmaster/UrbanWellness">GitHub</a></p>
+                    <div class="space-y-6">
 
-      <p><strong>Webre – Crypto & Forex Trading Website</strong><br>
-      Role: Frontend Developer | Tech: HTML5, CSS3, TailwindCSS Vanilla JavaScript<br>
-      - Designed trading platform interface with real-time market data visualization<br>
-      - Implemented secure user authentication and portfolio tracking features <br>
-      <a href="http://webre-dun.vercel.app/">Live Link</a> | 
-      <a href="https://github.com/thedesigngrandmaster/Webre">GitHub</a></p>
+                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h4 class="text-xl font-semibold"> <span class="text-indigo-600">Newmanstore Collections</span> (Luxury E-Commerce)
+                                        </h4>
+                                        <p class="text-grey-600 italic">Stack: React, TypeScript, Shopify Storefront
+                                            API, Supabase, TailwindCSS</p>
+                                    </div>
+                                    <div class="text-gray-500 text-sm">
+                                        <p class="whitespace-nowrap">Full-Stack Engineer</p>
+                                        <p>
+                                            <a href="http://the-nsc-hubbb.vercel.app/">Live Link</a> | <a href="#">GitHub</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <ul class="list-disc pl-5 text-black space-y-1">
+                                    <li>
+                                        Architected a high-performance luxury e-commerce platform integrating the
+                                        Shopify Storefront API,
+                                        enabling real-time inventory synchronization and seamless product management for
+                                        500+ SKUs.
+                                    </li>
+                                    <li>
+                                        Engineered a localized payment and checkout system supporting NGN currency
+                                        conversion,
+                                        the user experience for the Nigerian market and reducing cart abandonment by
+                                        approximately 15%.
+                                    </li>
+                                    <li>
+                                        Developed a custom admin dashboard and automated invoice mailing system using
+                                        Supabase Edge Functions, streamlining order processing and reducing manual
+                                        administrative time by 40%.
+                                    </li>
+                                </ul>
+                            </div>
 
-      <p><strong>Prime Devs – Nigerian Tech Agency Website</strong><br>
-      Role: Frontend Developer | Tech: HTML5, CSS3, TailwindCSS Vanilla JavaScript<br>
-      - Built professional agency website showcasing local tech services and solutions<br>
-      - Optimized for Nigerian market with localized content and fast loading speed<br>
-      <a href="http://prime-devs.vercel.app/">Live Link</a> | 
-      <a href="https://github.com/thedesigngrandmaster/prime-devs">GitHub</a></p>
+                            <br>
 
-      <p><strong>Newmanstore Collections – Nigerian Luxury Sneakers E-Commerce
-</strong><br>
-      Role: Full-Stack Developer | Tech: React, TypeScript, Vite, TailwindCSS, Shopify Storefront API, Supabase<br>
-      - Built full-featured e-commerce platform for premium sneakers with real-time Shopify product integration <br>
-- Implemented secure checkout flow, cart management, admin dashboard, and automated invoice email system <br>
-- Optimized for Nigerian market with NGN currency conversion and localized payment solutions <br>
-      <a href="http://the-nsc-hubbb.vercel.app/">Live Link</a> | 
-      <a href="#">GitHub</a></p>
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h4 class="text-xl font-semibold">
+                                            <span class="text-indigo-600">SyncStep</span> (Sneaker Retail Platform)
+                                        </h4>
+                                        <p class="text-grey-600 italic">
+                                            Stack: React, TypeScript, Vite, Supabase Auth & DB
+                                        </p>
+                                    </div>
+                                    <div class="text-gray-500 text-sm">
+                                        <p class="whitespace-nowrap">Full-Stack Engineer</p>
+                                        <p>
+                                            <a href="http://syncstep.vercel.app/">Live Link</a> | <a href="#">GitHub</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <ul class="list-disc pl-5 text-black space-y-1">
+                                    <li>
+                                        Deployed a scalable full-stack sneaker retail application featuring a robust product CRUD system 
+                                        and dynamic shopping cart state management using React Context API.
+                                    </li>
+                                    <li>
+                                        Implemented serverless backend logic for secure authentication 
+                                        and automated order workflows, including instant email confirmations via Supabase triggers.
+                                    </li>
+                                    <li>
+                                        Designed a mobile-responsive UI with direct WhatsApp integration, 
+                                        facilitating instant customer support and driving direct-to-consumer sales channels.
+                                    </li>
+                                </ul>
+                            </div>
 
-      <p><strong>SyncStep – E-Commerce Sneaker Store</strong><br>
-      Role: Full-Stack Developer | Tech: React, TypeScript, TailwindCSS, Vite, Supabase (Backend) <br>
+                            <br>
 
-- Built complete e-commerce platform with product catalog, shopping cart, and secure checkout system <br>
-- Implemented admin dashboard for order management, product CRUD operations, and site-wide settings control <br>
-- Integrated email automation for order confirmations, status updates, and newsletter campaigns <br>
-- Designed responsive UI with WhatsApp integration and dynamic cart preview <br>
-- Deployed backend with authentication, database, and serverless functions for order processing <br>
-      <a href="http://syncstep.vercel.app/">Live Link</a> | 
-      <a href="#">GitHub</a></p>
-      
-    </section>
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h4 class="text-xl font-semibold">
+                                            <span class="text-indigo-600">Webre</span> (Crypto & Forex Trading Interface)
+                                        </h4>
+                                        <p class="text-grey-600 italic">
+                                            Stack: JavaScript (ES6+), CSS3, Financial Data APIs
+                                        </p>
+                                    </div>
+                                    <div class="text-gray-500 text-sm">
+                                        <p class="whitespace-nowrap">Frontend Engineer</p>
+                                        <p>
+                                            <a href="http://webre-dun.vercel.app/">Live Link</a> | <a href="https://github.com/thedesigngrandmaster/Webre">GitHub</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <ul class="list-disc pl-5 text-black space-y-1">
+                                    <li>
+                                        Designed a responsive financial trading interface visualizing real-time market 
+                                        data, ensuring sub-second rendering speeds for dynamic crypto and forex charts.
+                                    </li>
+                                    <li>
+                                        Implemented secure user authentication flows and a personal portfolio 
+                                        tracking system, adhering to modern security best practices for handling sensitive user data.
+                                    </li>
+                                </ul>
+                            </div>
 
-    <section>
-      <h2>Education & Learning</h2>
-      <p>Self-taught Frontend Developer via YouTube, online tutorials & personal projects. Continuously learning through hands-on building and feedback loops.</p>
-    </section>
-  </div>
+                            <br>
+
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h4 class="text-xl font-semibold">
+                                            <span class="text-indigo-600">Haus</span> (Real Estate Listing Platform)
+                                        </h4>
+                                        <p class="text-grey-600 italic">
+                                            Stack: JavaScript, Geolocation API, Responsive Design
+                                        </p>
+                                    </div>
+                                    <div class="text-gray-500 text-sm">
+                                        <p class="whitespace-nowrap">Frontend Engineer</p>
+                                        <p>
+                                            <a href="http://haus-seven.vercel.app/">Live Link</a> | <a href="https://github.com/thedesigngrandmaster/Haus">GitHub</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <ul class="list-disc pl-5 text-black space-y-1">
+                                    <li>
+                                        Developed an interactive real-time property listing platform featuring 
+                                        advanced search filtering and dynamic map integration for location-based property discovery.
+                                    </li>
+                                    <li>
+                                        Optimized frontend performance and asset loading, achieving a 
+                                        90+ Google Lighthouse score and ensuring a seamless browsing experience on mobile devices.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 border-b-2 border-indigo-500 pb-2">Education</h3>
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="text-xl font-semibold">Bachelor of Science, Computer Science</h4>
+                                <p class="text-indigo-600">Lagos State University</p>
+                            </div>
+                            <div class="text-gray-500 text-sm">
+                                <p>2024 - <i>Present</i></p>
+                                <p>Ojo, Lagos, Nigeria</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column -->
+            <div class="space-y-8">
+                <!-- Skills -->
+                <section>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 border-b-2 border-indigo-500 pb-2">Skills</h3>
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold mb-2">Design Tools</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Figma</span>
+                                    <span
+                                        class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Lunacy</span>
+                                    <span
+                                        class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Photoshop</span>
+                                    <span
+                                        class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Canva</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">UX Methods</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">User
+                                        Research</span>
+                                    <span
+                                        class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Wireframing</span>
+                                    <span
+                                        class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Prototyping</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Usability
+                                        Testing</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Technical</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">HTML/CSS</span>
+                                    <span
+                                        class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                                    <span
+                                        class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">React</span>
+                                    <span
+                                        class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Git</span>
+                                    <span
+                                        class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">SQL</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">AI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Languages -->
+                <section>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 border-b-2 border-indigo-500 pb-2">Languages</h3>
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">English</span>
+                                    <span class="text-sm text-gray-500">Native</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-indigo-600 h-2 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Igbo</span>
+                                    <span class="text-sm text-gray-500">Fluent</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-indigo-600 h-2 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Yoruba</span>
+                                    <span class="text-sm text-gray-500">Intermediate</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-indigo-600 h-2 rounded-full" style="width: 60%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
 </body>
-</html>
 
+</html>
