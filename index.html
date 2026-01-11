@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Samuel Amanze | Frontend Developer</title>
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="shortcut icon" href="/assets/image/favicon.png" type="image/x-icon">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Amanze | Frontend Developer & Graphic Designer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="/assets/image/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         .font-tiktok {
             font-family: 'TikTok Sans', sans-serif;
         }
-    </style>
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-        <style>
-            img {
-                object-postion: top;
-            }
-            
-            .brand-slider {
+    </script>
+</body>
+</html>
+        
+        img {
+            object-position: top;
+        }
+        
+        .brand-slider {
             animation: slide 30s linear infinite;
         }
         
@@ -33,301 +32,616 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
-        </style>
-    </head>
-    <body class="bg-purple-100">
-        <section class="home__section py-10 md:py-16">
 
-            <div class="container max-w-screen-xl mx-auto px-4">
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
-                <nav class="flex items-center justify-between mb-40">
-                    <h4 class="logo text-purple-900">Samuel <span class="font-900 text-purple-700">Amanze</span></h4>
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
 
-                    <a href="/assets/mycv/samuel-amanze-resume.pdf" download target="_blank" class="px-7 py-3 md:px-9 md:py-4 bg-purple-50 font-medium md:font-semibold text-purple-700 text-md rounded-md hover:bg-purple-700 hover:text-white transition ease-linear duration-500">Get my CV</a>
-                </nav>
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 500px;
+            width: 90%;
+            transform: scale(0.7);
+            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
 
-                <div class="home__container text-center flex-column items-center">
-                    <div class="home__img flex justify-center mb-8 b-purple-600">
-                        <img src="assets/image/home-img.jpg" alt="my-image">
-                    </div>
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
 
-                    <h6 class="font-medium text-purple-600 text-lg md:text-2xl uppercase mb-4">Samuel Amanze</h6>
+        /* Project Card Animations */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-                    <h1 class="font-normal text-purple-800 text-4xl md:text-7xl leading-none mb-4">Frontend Developer</h1>
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+            transition: left 0.6s ease;
+            z-index: 1;
+        }
 
-                    <p class="font-normal text-purple-600 text-md md:text-xl mb-8">I have a passion for design. I enjoy creating web designs that make life easier for people.</p>
+        .project-card:hover::before {
+            left: 100%;
+        }
 
-                    <a href="mailto:officialsammy61@gmail.com?subject=Like to Work With You!&body=Hi Samuel Amanze,%0D%0A%0D%0AI just visited your portfolio and am genuinely impressed by your frontend work. The design is clean, the UX is smooth, and everything feels super professional.%0D%0A%0D%0AI’d love to discuss a potential opportunity to collaborate. Let me know if you’re open to chatting!" class="px-7 py-3 md:px-9 md:py-4 font-medium md:font-semibold bg-purple-700 text-purple-50 text-sm rounded-md hover:bg-purple-50 hover:text-purple-700 transition-all ease-linear duration-500" title="">Hire me</a>
-                </div>
+        .project-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+        }
+
+        .project-card img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1) rotate(2deg);
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            padding: 1.5rem;
+            z-index: 2;
+        }
+
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+
+        .tag-animate {
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .tag-animate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Design Projects Card Special Style */
+        .design-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .design-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .design-card:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        /* Project Detail Page Styles */
+        .project-detail-page {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f3e8ff;
+            z-index: 2000;
+            overflow-y: auto;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-detail-page.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .feature-item {
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideIn 0.5s forwards;
+        }
+
+        .feature-item:nth-child(1) { animation-delay: 0.1s; }
+        .feature-item:nth-child(2) { animation-delay: 0.2s; }
+        .feature-item:nth-child(3) { animation-delay: 0.3s; }
+        .feature-item:nth-child(4) { animation-delay: 0.4s; }
+        .feature-item:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-purple-100">
+    <!-- CV Download Modal -->
+    <div id="cvModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-purple-800">Download CV</h3>
+                <button onclick="closeModal()" class="text-purple-600 hover:text-purple-800 text-3xl">&times;</button>
             </div>
-        </section>
-
-        <section class="cards__section py-10 md:py-16">
-
-            <div class="container max-w-screen-xl mx-auto px-4">
-
-                <div class="cards__container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="card bg-purple-50 px-8 py-10 rounded-md">
-                        <div class="card__icon w-20 py-6 flex justify-center items-center bg-purple-100 rounded-md mb-4">
-                            <i class='bx bx-palette text-purple-800'></i>
-                        </div>
-
-                        <h4 class="card__title font-medium text-purple-700 text-lg mb-4">Extensive Frontend Expertisee</h4>
-
-                        <p class="card__text font-normal text-purple-500 text-md">
-                            Experienced frontend developer crafting responsive, user-friendly interfaces with HTML5, CSS3, JavaScript, 
-                            React, and TailwindCSS to deliver seamless, engaging web experiences.
-                        </p>
-                    </div>
-                    
-                    <div class="card bg-purple-50 px-8 py-10 rounded-md">
-                        <div class="card__icon w-20 py-6 flex justify-center bg-purple-100 rounded-md mb-4">
-                            <i class='bx bx-desktop text-purple-800'></i>
-                        </div>
-
-                        <h4 class="card__title font-medium text-purple-700 text-lg mb-4">Frontend Sandboxes You’ll Love</h4>
-
-                        <p class="card__text font-normal text-purple-500 text-md">
-                            Experiment, prototype, and build with ease.
-                            From styling tweaks to full app mockups,
-                            these tools streamline your UI workflow.
-                        </p>
-                    </div>
-                    
-                    <div class="card bg-purple-50 px-8 py-10 rounded-md">
-                        <div class="card__icon w-20 py-6 flex justify-center bg-purple-100 rounded-md mb-4">
-                            <i class='bx bx-star text-purple-800'></i>
-                        </div>
-
-                        <h4 class="card__title font-medium text-purple-700 text-lg mb-4">Successful Side Projects</h4>
-
-                        <p class="card__text font-normal text-purple-500 text-md">
-                            Bringing ideas to life through polished, high-impact web experiences.
-                            From concept to deployment, each project showcases creativity and technical skill.
-                        </p>
-                    </div>
-                </div>
-
+            <div class="space-y-4">
+                <a href="/assets/mycv/Amanze-Samuel-Graphic-Designer-CV" download class="flex items-center justify-between p-4 bg-purple-50 hover:bg-purple-100 rounded-lg transition group">
+                    <span class="text-purple-700 font-medium">Graphic Designer CV</span>
+                    <i class='bx bxs-download text-purple-600 text-2xl group-hover:animate-bounce'></i>
+                </a>
+                <a href="/assets/mycv/Amanze-Samuel-Frontend-Developer-CV" download class="flex items-center justify-between p-4 bg-purple-50 hover:bg-purple-100 rounded-lg transition group">
+                    <span class="text-purple-700 font-medium">Frontend Developer CV</span>
+                    <i class='bx bxs-download text-purple-600 text-2xl group-hover:animate-bounce'></i>
+                </a>
             </div>
+        </div>
+    </div>
 
-        </section>
+    <!-- Project Detail Page Template -->
+    <div id="projectDetailPage" class="project-detail-page">
+        <div class="container max-w-screen-xl mx-auto px-4 py-10">
+            <button onclick="closeProjectDetail()" class="mb-8 flex items-center text-purple-700 hover:text-purple-900 font-medium transition">
+                <i class='bx bx-arrow-back text-2xl mr-2'></i> Back to Projects
+            </button>
+            <div id="projectDetailContent"></div>
+        </div>
+    </div>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-                        <div class="relative rounded-full px-3 py-1 text-sm/6 text-purple-700 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                        Projects
-                        </div>
-                    </div>
-                    <h2 class="text-4xl font-bold mb-4">My Recent Projects</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Take a look at some of my recent projects.</p>
+    <section class="home__section py-10 md:py-16">
+        <div class="container max-w-screen-xl mx-auto px-4">
+            <nav class="flex items-center justify-between mb-40">
+                <h4 class="logo text-purple-900">Samuel <span class="font-900 text-purple-700">Amanze</span></h4>
+                <button onclick="openModal()" class="px-7 py-3 md:px-9 md:py-4 bg-purple-50 font-medium md:font-semibold text-purple-700 text-md rounded-md hover:bg-purple-700 hover:text-white transition ease-linear duration-500">Get my CV</button>
+            </nav>
+
+            <div class="home__container text-center flex-column items-center">
+                <div class="home__img flex justify-center mb-8 b-purple-600">
+                    <img src="assets/image/home-img.jpg" alt="my-image">
                 </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <a href="https://the-nsc-hubbb.vercel.app/" class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                        <img src="/assets/image/web/the-nsc.jpeg" alt="Project" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-2">Newmanstore Collections</h3>
-                            <p class="text-gray-600 mb-4">
-                                Luxury E-Commerce Website
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">React</span>
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">Shopify Storefront API</span>
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">Supabase</span>
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="https://syncstep.vercel.app/" class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                        <img src="/assets/image/web/syncstep.jpeg" alt="Project" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-2">SyncStep</h3>
-                            <p class="text-gray-600 mb-4">
-                                Sneaker Retail Platform
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">React</span>
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">Vite</span>
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">Supabase</span>
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">DB</span>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <a href="https://webre-dun.vercel.app/" class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                        <img src="/assets/image/web/webre.png" alt="Project" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-2">Webre</h3>
-                            <p class="text-gray-600 mb-4">
-                                A Premium Crypto and Forex Trading Platform
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">React</span>
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Project 4 -->
-                     <a href="https://haus-seven.vercel.app/" class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                        <img src="/assets/image/web/haus.png" alt="Project" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-2">Haus Real Estate Agency</h3>
-                            <p class="text-gray-600 mb-4">
-                                A Nigerian-based real estate agency.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">React</span>
-                                <span class="bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="text-center mt-12">
-                    <a href="#" class="inline-block bg-purple-700 hover:bg-purple-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition">View All Projects</a>
-                </div>
+                <h6 class="font-medium text-purple-600 text-lg md:text-2xl uppercase mb-4">Samuel Amanze</h6>
+                <h1 class="font-normal text-purple-800 text-4xl md:text-7xl leading-none mb-4">Frontend Developer & Graphic Designer</h1>
+                <p class="font-normal text-purple-600 text-md md:text-xl mb-8">I combine artistic vision with technical precision. As a hybrid creative, I don't just write code—I craft visual identities and translate them into seamless, responsive web experiences. I build digital products that look stunning and work perfectly.</p>
+                <a href="mailto:officialsammy61@gmail.com?subject=Like to Work With You!&body=Hi Samuel Amanze,%0D%0A%0D%0AI just visited your portfolio and am genuinely impressed by your frontend work. The design is clean, the UX is smooth, and everything feels super professional.%0D%0A%0D%0AI'd love to discuss a potential opportunity to collaborate. Let me know if you're open to chatting!" class="px-7 py-3 md:px-9 md:py-4 font-medium md:font-semibold bg-purple-700 text-purple-50 text-sm rounded-full hover:bg-purple-50 hover:text-purple-700 transition-all ease-linear duration-500">Let's bring your vision to life.</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="education__section py-10 md:py-16">
-
-            <div class="container max-w-screen-xl mx-auto px-4">
-
-                <h1 class="font-medium text-purple-700 text-3xl md:text-4xl mb-5">
-                    Education
-                </h1>
-
-                <p class="font-normal text-purple-500 text-xs md:text-base mb-20">
-                    School, skills, and self-growth
-                </p>
-
-                <div class="education__section_cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="education__section_card bg-purple-50 px-8 py-10 rounded-md">
-                        <h4 class="font-medium text-purple-700 text-lg mb-4">
-                            2016 – 2022
-                        </h4>
-
-                        <p class="font-normal text-purple-500 text-md mb-4">
-                           Secondary School Education <br>
-                           Ajeromi Ifelodun Senior High School
-                        </p>
-
-                        <div class="relative">
-                            <a href="/" class="font-semibold text-purple-500 text-md relative z-10">
-                                See details
-                            </a>
-                            <span class="w-16 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
-                        </div>
+    <section class="cards__section py-10 md:py-16">
+        <div class="container max-w-screen-xl mx-auto px-4">
+            <div class="cards__container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card bg-purple-50 px-8 py-10 rounded-md">
+                    <div class="card__icon w-20 py-6 flex justify-center items-center bg-purple-100 rounded-md mb-4">
+                        <i class='bx bx-palette text-purple-800'></i>
                     </div>
-
-                    <div class="education__section_card bg-purple-50 px-8 py-10 rounded-md">
-                        <h4 class="font-medium text-purple-700 text-lg mb-4">2022</h4>
-
-                        <p class="font-normal text-purple-500 text-md mb-4">
-                            Frontend Web Development Nanodegree <br>
-                            YouTube <br>
-                            CSS frameworks, JavaScript, ES6, asynchronous programming, and modern tooling
-                        </p>
-
-                        <div class="relative">
-                            <h6 class="font-semibold text-purple-500 text-md relative z-10">
-                                View Certificate
-                            </h6>
-                            <span class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
-                        </div>
-                    </div>
-
-                    <div class="education__section_card bg-purple-50 px-8 py-10 rounded-md">
-                        <h4 class="font-medium text-purple-700 text-lg mb-4">2022</h4>
-
-                        <p class="font-normal text-purple-500 text-md mb-4">
-                            React – The Complete Guide <br>
-                            Academind / Udemy <br>
-                            Deep dive into React, Redux, hooks, context API, and deployment strategies
-                        </p>
-
-                        <div class="relative">
-                            <h6 class="font-semibold text-purple-500 text-md relative z-10">
-                                View Certificate
-                            </h6>
-                            <span class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
-                        </div>
-                    </div>
-
-                    <div class="education__section_card bg-purple-50 px-8 py-10 rounded-md">
-                        <h4 class="font-medium text-purple-700 text-lg mb-4">
-                            2024 – 2027
-                        </h4>
-
-                        <p class="font-normal text-purple-500 text-md mb-4">
-                            Bachelor of Science <br>
-                            Lagos State University
-                        </p>
-
-                        <div class="relative">
-                            <a href="https://www.lasu.edu.ng/" class="font-semibold text-purple-500 text-md relative z-10">
-                                View Certificate
-                            </a>
-                            <span class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <footer class="footer__section py-10 md:py-16 mb-20 md:mb-40 lg::mb-52">
-
-            <div class="container max-w-screen-xl mx-auto px-4">
-
-                <div class="text-center">
-                    <h1 class="footer__title font-medium text-purple-700 text-4xl md:text-5xl mb-5">Contact</h1>
-
-                    <p class="footer__subtitle font-normal text-purple-400 text-md md:text-lg mb-20">
-                        At the moment, I’m not actively taking on client work, <br>
-                        but I’m open to new opportunities and would be happy to discuss any inquiries.
+                    <h4 class="card__title font-medium text-purple-700 text-lg mb-4">Extensive Frontend Expertise</h4>
+                    <p class="card__text font-normal text-purple-500 text-md">
+                        Experienced frontend developer crafting responsive, user-friendly interfaces with HTML5, CSS3, JavaScript, 
+                        React, and TailwindCSS to deliver seamless, engaging web experiences.
                     </p>
+                </div>
+                
+                <div class="card bg-purple-50 px-8 py-10 rounded-md">
+                    <div class="card__icon w-20 py-6 flex justify-center bg-purple-100 rounded-md mb-4">
+                        <i class='bx bx-desktop text-purple-800'></i>
+                    </div>
+                    <h4 class="card__title font-medium text-purple-700 text-lg mb-4">Frontend Sandboxes You'll Love</h4>
+                    <p class="card__text font-normal text-purple-500 text-md">
+                        Experiment, prototype, and build with ease.
+                        From styling tweaks to full app mockups,
+                        these tools streamline your UI workflow.
+                    </p>
+                </div>
+                
+                <div class="card bg-purple-50 px-8 py-10 rounded-md">
+                    <div class="card__icon w-20 py-6 flex justify-center bg-purple-100 rounded-md mb-4">
+                        <i class='bx bx-star text-purple-800'></i>
+                    </div>
+                    <h4 class="card__title font-medium text-purple-700 text-lg mb-4">Successful Side Projects</h4>
+                    <p class="card__text font-normal text-purple-500 text-md">
+                        Bringing ideas to life through polished, high-impact web experiences.
+                        From concept to deployment, each project showcases creativity and technical skill.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="flex items-center justify-center space-x-8">
-                        <a href="mailto:officialsammy61@gmail.com" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
-                            <i class="bx bxs-envelope text-purple-500 hover:text-purple-800 transition ease-in-out duration-500"></i>
-                        </a>
-    
-                        <a href="tel:+2349132713169" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
-                            <i class="bx bxs-phone-call text-purple-500 hover:text-purple-700 transition ease-in-out duration-500"></i>
-                        </a>
-    
-                        <a href="https://www.x.com/thelotmaster" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
-                            <i class="bx bxl-twitter text-purple-500 hover:text-purple-700 transition ease-in-out duration-500"></i>
-                        </a>
-    
-                        <a href="https://www.linkedin.com/in/samuel-amanze-05316b27a/" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
-                            <i class="bx bxl-linkedin text-purple-500 hover:text-purple-700 transition ease-in-out duration-500"></i>
-                        </a>
-    
-                        <a href="https://github.com/thedesigngrandmaster" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
-                            <i class="bx bxl-github text-purple-500 hover:text-purple-700 transition ease-in-out duration-500"></i>
-                        </a>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                    <div class="relative rounded-full px-3 py-1 text-sm/6 text-purple-700 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                        Projects
+                    </div>
+                </div>
+                <h2 class="text-4xl font-bold mb-4">My Projects</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Take a look at some of my projects.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Design Projects Card -->
+                <div class="design-card project-card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer relative">
+                    <a href="design-projects.html" class="block relative z-10">
+                        <div class="h-64 flex items-center justify-center">
+                            <i class='bx bxs-palette text-white text-9xl opacity-80'></i>
+                        </div>
+                        <div class="p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2">View My Design Projects</h3>
+                            <p class="text-purple-100 mb-4">
+                                Explore my graphic design portfolio featuring brand identities, illustrations, and creative visuals.
+                            </p>
+                            <div class="flex items-center text-white font-semibold">
+                                <a href="https://drive.google.com/drive/folders/10ViGmHG0OJWRrWN_uG8BqjbUYmmaRbY_?usp=drive_link" target="_blank" rel="noopener noreferrer">View Gallery</a>
+                                <i class='bx bx-right-arrow-alt text-2xl ml-2'></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" onclick="showProjectDetail('nsc')">
+                    <div class="relative h-64">
+                        <img src="/assets/image/web/the-nsc.jpeg" alt="Project" class="w-full h-full object-cover">
+                        <div class="project-overlay">
+                            <button class="bg-white text-purple-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-700 hover:text-white transition">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Newmanstore Collections</h3>
+                        <p class="text-gray-600 mb-4">Luxury E-Commerce Website</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">Shopify</span>
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">Supabase</span>
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                        </div>
                     </div>
                 </div>
 
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" onclick="showProjectDetail('syncstep')">
+                    <div class="relative h-64">
+                        <img src="/assets/image/web/syncstep.jpeg" alt="Project" class="w-full h-full object-cover">
+                        <div class="project-overlay">
+                            <button class="bg-white text-purple-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-700 hover:text-white transition">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">SyncStep</h3>
+                        <p class="text-gray-600 mb-4">Sneaker Retail Platform</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">Vite</span>
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">Supabase</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" onclick="showProjectDetail('webre')">
+                    <div class="relative h-64">
+                        <img src="/assets/image/web/webre.png" alt="Project" class="w-full h-full object-cover">
+                        <div class="project-overlay">
+                            <button class="bg-white text-purple-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-700 hover:text-white transition">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Webre</h3>
+                        <p class="text-gray-600 mb-4">A Premium Crypto and Forex Trading Platform</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" onclick="showProjectDetail('haus')">
+                    <div class="relative h-64">
+                        <img src="/assets/image/web/haus.png" alt="Project" class="w-full h-full object-cover">
+                        <div class="project-overlay">
+                            <button class="bg-white text-purple-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-700 hover:text-white transition">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Haus Real Estate Agency</h3>
+                        <p class="text-gray-600 mb-4">A Nigerian-based real estate agency.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="tag-animate bg-purple-700 text-gray-100 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-purple-700 hover:bg-purple-800 text-white px-8 py-3 rounded-full text-lg font-semibold transition">View All Projects</a>
+            </div>
+        </div>
+    </section>
 
-        </footer>
-    </body>
-</html>
+    <section class="education__section py-10 md:py-16">
+        <div class="container max-w-screen-xl mx-auto px-4">
+            <h1 class="font-medium text-purple-700 text-3xl md:text-4xl mb-5">Education</h1>
+            <p class="font-normal text-purple-500 text-xs md:text-base mb-20">School, skills, and self-growth</p>
 
+            <div class="education__section_cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="education__section_card bg-purple-50 px-8 py-10 rounded-md">
+                    <h4 class="font-medium text-purple-700 text-lg mb-4">2016 – 2022</h4>
+                    <p class="font-normal text-purple-500 text-md mb-4">
+                       Secondary School Education <br>
+                       Ajeromi Ifelodun Senior High School
+                    </p>
+                    <div class="relative">
+                        <a href="/" class="font-semibold text-purple-500 text-md relative z-10">See details</a>
+                        <span class="w-16 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
+                    </div>
+                </div>
 
+                <div class="education__section_card bg-purple-50 px-8 py-10 rounded-md">
+                    <h4 class="font-medium text-purple-700 text-lg mb-4">2022</h4>
+                    <p class="font-normal text-purple-500 text-md mb-4">
+                        Frontend Web Development Nanodegree <br>
+                        YouTube <br>
+                        CSS frameworks, JavaScript, ES6, asynchronous programming, and modern tooling
+                    </p>
+                    <div class="relative">
+                        <h6 class="font-semibold text-purple-500 text-md relative z-10">View Certificate</h6>
+                        <span class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
+                    </div>
+                </div>
 
+                <div class="education__section_card bg-purple-50 px-8 py-10 rounded-md">
+                    <h4 class="font-medium text-purple-700 text-lg mb-4">2022</h4>
+                    <p class="font-normal text-purple-500 text-md mb-4">
+                        React – The Complete Guide <br>
+                        Academind / Udemy <br>
+                        Deep dive into React, Redux, hooks, context API, and deployment strategies
+                    </p>
+                    <div class="relative">
+                        <h6 class="font-semibold text-purple-500 text-md relative z-10">View Certificate</h6>
+                        <span class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
+                    </div>
+                </div>
 
+                <div class="education__section_card bg-purple-50 px-8 py-10 rounded-md">
+                    <h4 class="font-medium text-purple-700 text-lg mb-4">2024 – 2027</h4>
+                    <p class="font-normal text-purple-500 text-md mb-4">
+                        Bachelor of Science <br>
+                        Lagos State University
+                    </p>
+                    <div class="relative">
+                        <a href="https://www.lasu.edu.ng/" class="font-semibold text-purple-500 text-md relative z-10">View Certificate</a>
+                        <span class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer__section py-10 md:py-16 mb-20 md:mb-40 lg::mb-52">
+        <div class="container max-w-screen-xl mx-auto px-4">
+            <div class="text-center">
+                <h1 class="footer__title font-medium text-purple-700 text-4xl md:text-5xl mb-5">Contact</h1>
+                <p class="footer__subtitle font-normal text-purple-400 text-md md:text-lg mb-20">
+                    At the moment, I'm not actively taking on client work, <br>
+                    but I'm open to new opportunities and would be happy to discuss any inquiries.
+                </p>
+                <div class="flex items-center justify-center space-x-8">
+                    <a href="mailto:officialsammy61@gmail.com" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
+                        <i class="bx bxs-envelope text-purple-500 hover:text-purple-800 transition ease-in-out duration-500"></i>
+                    </a>
+                    <a href="tel:+2349132713169" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
+                        <i class="bx bxs-phone-call text-purple-500 hover:text-purple-700 transition ease-in-out duration-500"></i>
+                    </a>
+                    <a href="https://www.x.com/thelotmaster" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
+                        <i class="bx bxl-twitter text-purple-500 hover:text-purple-700 transition ease-in-out duration-500"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/samuel-amanze-05316b27a/" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
+                        <i class="bx bxl-linkedin text-purple-500 hover:text-purple-700 transition ease-in-out duration-500"></i>
+                    </a>
+                    <a href="https://github.com/thedesigngrandmaster" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
+                        <i class="bx bxl-github text-purple-500 hover:text-purple-700 transition ease-in-out duration-500"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Modal Functions
+        function openModal() {
+            document.getElementById('cvModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('cvModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('cvModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Project Data
+        const projectData = {
+            nsc: {
+                title: 'Newmanstore Collections',
+                subtitle: 'Luxury E-Commerce Website',
+                description: 'A sophisticated e-commerce platform built for luxury fashion retail. Features include real-time inventory management through Shopify Storefront API, secure user authentication, and a seamless checkout experience. The platform offers a premium shopping experience with advanced filtering, personalized recommendations, and responsive design that works flawlessly across all devices.',
+                technologies: ['React', 'TypeScript', 'Shopify Storefront API', 'Supabase', 'TailwindCSS'],
+                features: [
+                    'Real-time product inventory sync with Shopify',
+                    'Advanced filtering and search functionality',
+                    'User authentication and profile management',
+                    'Responsive design for all devices',
+                    'Secure payment integration'
+                ],
+                link: 'https://the-nsc-hubbb.vercel.app/',
+                image: '/assets/image/web/the-nsc.jpeg'
+            },
+            syncstep: {
+                title: 'SyncStep',
+                subtitle: 'Sneaker Retail Platform',
+                description: 'A modern sneaker retail platform featuring a curated collection of premium footwear. Built with performance and user experience in mind, offering seamless browsing and purchasing capabilities with real-time stock updates and an intuitive interface.',
+                technologies: ['React', 'TailwindCSS', 'TypeScript', 'Vite', 'Supabase'],
+                features: [
+                    'Product catalog with advanced filtering',
+                    'Real-time stock updates',
+                    'User wishlist and favorites',
+                    'Fast page loads with Vite',
+                    'Database-driven content management'
+                ],
+                link: 'https://syncstep.vercel.app/',
+                image: '/assets/image/web/syncstep.jpeg'
+            },
+            webre: {
+                title: 'Webre',
+                subtitle: 'Premium Crypto and Forex Trading Platform',
+                description: 'A comprehensive trading platform designed for both cryptocurrency and forex markets. Features real-time market data, intuitive trading interface, and advanced charting tools for professional traders.',
+                technologies: ['React', 'TailwindCSS'],
+                features: [
+                    'Real-time market data and charts',
+                    'Multi-currency support',
+                    'Responsive trading dashboard',
+                    'Modern, clean interface',
+                    'Secure authentication system'
+                ],
+                link: 'https://webre-dun.vercel.app/',
+                image: '/assets/image/web/webre.png'
+            },
+            haus: {
+                title: 'Haus Real Estate Agency',
+                subtitle: 'Nigerian Real Estate Platform',
+                description: 'A modern real estate platform for a Nigerian-based agency, featuring property listings, virtual tours, and easy contact options for potential buyers and renters.',
+                technologies: ['React', 'TailwindCSS'],
+                features: [
+                    'Property listing showcase',
+                    'Advanced search and filters',
+                    'Responsive gallery views',
+                    'Contact forms and inquiries',
+                    'Modern, professional design'
+                ],
+                link: 'https://haus-seven.vercel.app/',
+                image: '/assets/image/web/haus.png'
+            }
+        };
+
+        // Project Detail Functions
+        function showProjectDetail(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+
+            const detailPage = document.getElementById('projectDetailPage');
+            const content = document.getElementById('projectDetailContent');
+
+            content.innerHTML = `
+                <div class="bg-white rounded-xl shadow-2xl overflow-hidden">
+                    <img src="${project.image}" alt="${project.title}" class="w-full h-96 object-cover">
+                    <div class="p-8 md:p-12">
+                        <h1 class="text-4xl md:text-5xl font-bold text-purple-800 mb-4">${project.title}</h1>
+                        <h2 class="text-2xl text-purple-600 mb-6">${project.subtitle}</h2>
+                        
+                        <div class="prose max-w-none mb-8">
+                            <p class="text-gray-700 text-lg leading-relaxed">${project.description}</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-semibold text-purple-700 mb-4">Technologies Used</h3>
+                            <div class="flex flex-wrap gap-3">
+                                ${project.technologies.map(tech => `
+                                    <span class="bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium">${tech}</span>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-semibold text-purple-700 mb-4">Key Features</h3>
+                            <ul class="space-y-3">
+                                ${project.features.map((feature, index) => `
+                                    <li class="feature-item flex items-start">
+                                        <i class='bx bx-check-circle text-purple-600 text-2xl mr-3 flex-shrink-0'></i>
+                                        <span class="text-gray-700 text-lg">${feature}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <a href="${project.link}" target="_blank" class="inline-flex items-center px-6 py-3 bg-purple-700 text-white rounded-lg font-semibold hover:bg-purple-800 transition">
+                                <i class='bx bx-link-external mr-2 text-xl'></i>
+                                Visit Live Site
+                            </a>
+                            <button onclick="closeProjectDetail()" class="inline-flex items-center px-6 py-3 bg-purple-100 text-purple-700 rounded-lg font-semibold hover:bg-purple-200 transition">
+                                <i class='bx bx-arrow-back mr-2 text-xl'></i>
+                                Back
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            detailPage.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectDetail() {
+            const detailPage = document.getElementById('projectDetailPage');
+            detailPage.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
