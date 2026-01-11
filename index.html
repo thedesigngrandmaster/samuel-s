@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuel Amanze | Frontend Developer & Graphic Designer</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" href="/assets/image/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
@@ -16,21 +14,9 @@
         .font-tiktok {
             font-family: 'TikTok Sans', sans-serif;
         }
-    </script>
-</body>
-</html>
         
         img {
             object-position: top;
-        }
-        
-        .brand-slider {
-            animation: slide 30s linear infinite;
-        }
-        
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
         }
 
         /* Modal Styles */
@@ -122,6 +108,18 @@
             transform: translateY(0);
         }
 
+        /* Project Info - Hidden by default, shown on hover */
+        .project-info {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover .project-info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .tag-animate {
             display: inline-block;
             transition: all 0.3s ease;
@@ -208,11 +206,11 @@
                 <button onclick="closeModal()" class="text-purple-600 hover:text-purple-800 text-3xl">&times;</button>
             </div>
             <div class="space-y-4">
-                <a href="/assets/mycv/Amanze-Samuel-Graphic-Designer-CV" download class="flex items-center justify-between p-4 bg-purple-50 hover:bg-purple-100 rounded-lg transition group">
+                <a href="/assets/mycv/Amanze-Samuel-Graphic-Designer-CV.pdf" download class="flex items-center justify-between p-4 bg-purple-50 hover:bg-purple-100 rounded-lg transition group">
                     <span class="text-purple-700 font-medium">Graphic Designer CV</span>
                     <i class='bx bxs-download text-purple-600 text-2xl group-hover:animate-bounce'></i>
                 </a>
-                <a href="/assets/mycv/Amanze-Samuel-Frontend-Developer-CV" download class="flex items-center justify-between p-4 bg-purple-50 hover:bg-purple-100 rounded-lg transition group">
+                <a href="/assets/mycv/Amanze-Samuel-Frontend-Developer-CV.pdf" download class="flex items-center justify-between p-4 bg-purple-50 hover:bg-purple-100 rounded-lg transition group">
                     <span class="text-purple-700 font-medium">Frontend Developer CV</span>
                     <i class='bx bxs-download text-purple-600 text-2xl group-hover:animate-bounce'></i>
                 </a>
@@ -239,11 +237,11 @@
 
             <div class="home__container text-center flex-column items-center">
                 <div class="home__img flex justify-center mb-8 b-purple-600">
-                    <img src="assets/image/home-img.jpg" alt="my-image">
+                    <img src="assets/image/home-img.jpg" alt="my-image" class="rounded-full w-48 h-48 object-cover">
                 </div>
                 <h6 class="font-medium text-purple-600 text-lg md:text-2xl uppercase mb-4">Samuel Amanze</h6>
                 <h1 class="font-normal text-purple-800 text-4xl md:text-7xl leading-none mb-4">Frontend Developer & Graphic Designer</h1>
-                <p class="font-normal text-purple-600 text-md md:text-xl mb-8">I combine artistic vision with technical precision. As a hybrid creative, I don't just write code—I craft visual identities and translate them into seamless, responsive web experiences. I build digital products that look stunning and work perfectly.</p>
+                <p class="font-normal text-purple-600 text-md md:text-xl mb-8 max-w-3xl mx-auto">I combine artistic vision with technical precision to craft visual identities and build seamless web experiences.</p>
                 <a href="mailto:officialsammy61@gmail.com?subject=Like to Work With You!&body=Hi Samuel Amanze,%0D%0A%0D%0AI just visited your portfolio and am genuinely impressed by your frontend work. The design is clean, the UX is smooth, and everything feels super professional.%0D%0A%0D%0AI'd love to discuss a potential opportunity to collaborate. Let me know if you're open to chatting!" class="px-7 py-3 md:px-9 md:py-4 font-medium md:font-semibold bg-purple-700 text-purple-50 text-sm rounded-full hover:bg-purple-50 hover:text-purple-700 transition-all ease-linear duration-500">Let's bring your vision to life.</a>
             </div>
         </div>
@@ -254,7 +252,7 @@
             <div class="cards__container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="card bg-purple-50 px-8 py-10 rounded-md">
                     <div class="card__icon w-20 py-6 flex justify-center items-center bg-purple-100 rounded-md mb-4">
-                        <i class='bx bx-palette text-purple-800'></i>
+                        <i class='bx bx-palette text-purple-800 text-4xl'></i>
                     </div>
                     <h4 class="card__title font-medium text-purple-700 text-lg mb-4">Extensive Frontend Expertise</h4>
                     <p class="card__text font-normal text-purple-500 text-md">
@@ -265,19 +263,19 @@
                 
                 <div class="card bg-purple-50 px-8 py-10 rounded-md">
                     <div class="card__icon w-20 py-6 flex justify-center bg-purple-100 rounded-md mb-4">
-                        <i class='bx bx-desktop text-purple-800'></i>
+                        <i class='bx bxs-brush text-purple-800 text-4xl'></i>
                     </div>
-                    <h4 class="card__title font-medium text-purple-700 text-lg mb-4">Frontend Sandboxes You'll Love</h4>
+                    <h4 class="card__title font-medium text-purple-700 text-lg mb-4">Creative Graphic Design</h4>
                     <p class="card__text font-normal text-purple-500 text-md">
-                        Experiment, prototype, and build with ease.
-                        From styling tweaks to full app mockups,
-                        these tools streamline your UI workflow.
+                        Transforming ideas into compelling visual stories.
+                        From brand identities to digital illustrations,
+                        I create designs that captivate and communicate.
                     </p>
                 </div>
                 
                 <div class="card bg-purple-50 px-8 py-10 rounded-md">
                     <div class="card__icon w-20 py-6 flex justify-center bg-purple-100 rounded-md mb-4">
-                        <i class='bx bx-star text-purple-800'></i>
+                        <i class='bx bx-star text-purple-800 text-4xl'></i>
                     </div>
                     <h4 class="card__title font-medium text-purple-700 text-lg mb-4">Successful Side Projects</h4>
                     <p class="card__text font-normal text-purple-500 text-md">
@@ -305,7 +303,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Design Projects Card -->
                 <div class="design-card project-card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer relative">
-                    <a href="design-projects.html" class="block relative z-10">
+                    <a href="https://drive.google.com/drive/folders/10ViGmHG0OJWRrWN_uG8BqjbUYmmaRbY_?usp=drive_link" target="_blank" rel="noopener noreferrer" class="block relative z-10">
                         <div class="h-64 flex items-center justify-center">
                             <i class='bx bxs-palette text-white text-9xl opacity-80'></i>
                         </div>
@@ -315,7 +313,7 @@
                                 Explore my graphic design portfolio featuring brand identities, illustrations, and creative visuals.
                             </p>
                             <div class="flex items-center text-white font-semibold">
-                                <a href="https://drive.google.com/drive/folders/10ViGmHG0OJWRrWN_uG8BqjbUYmmaRbY_?usp=drive_link" target="_blank" rel="noopener noreferrer">View Gallery</a>
+                                <span>View Gallery</span>
                                 <i class='bx bx-right-arrow-alt text-2xl ml-2'></i>
                             </div>
                         </div>
@@ -331,7 +329,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 project-info">
                         <h3 class="text-2xl font-semibold mb-2">Newmanstore Collections</h3>
                         <p class="text-gray-600 mb-4">Luxury E-Commerce Website</p>
                         <div class="flex flex-wrap gap-2">
@@ -353,7 +351,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 project-info">
                         <h3 class="text-2xl font-semibold mb-2">SyncStep</h3>
                         <p class="text-gray-600 mb-4">Sneaker Retail Platform</p>
                         <div class="flex flex-wrap gap-2">
@@ -375,7 +373,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 project-info">
                         <h3 class="text-2xl font-semibold mb-2">Webre</h3>
                         <p class="text-gray-600 mb-4">A Premium Crypto and Forex Trading Platform</p>
                         <div class="flex flex-wrap gap-2">
@@ -394,7 +392,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 project-info">
                         <h3 class="text-2xl font-semibold mb-2">Haus Real Estate Agency</h3>
                         <p class="text-gray-600 mb-4">A Nigerian-based real estate agency.</p>
                         <div class="flex flex-wrap gap-2">
@@ -406,66 +404,7 @@
             </div>
             
             <div class="text-center mt-12">
-                <a href="#" class="inline-block bg-purple-700 hover:bg-purple-800 text-white px-8 py-3 rounded-full text-lg font-semibold transition">View All Projects</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="education__section py-10 md:py-16">
-        <div class="container max-w-screen-xl mx-auto px-4">
-            <h1 class="font-medium text-purple-700 text-3xl md:text-4xl mb-5">Education</h1>
-            <p class="font-normal text-purple-500 text-xs md:text-base mb-20">School, skills, and self-growth</p>
-
-            <div class="education__section_cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="education__section_card bg-purple-50 px-8 py-10 rounded-md">
-                    <h4 class="font-medium text-purple-700 text-lg mb-4">2016 – 2022</h4>
-                    <p class="font-normal text-purple-500 text-md mb-4">
-                       Secondary School Education <br>
-                       Ajeromi Ifelodun Senior High School
-                    </p>
-                    <div class="relative">
-                        <a href="/" class="font-semibold text-purple-500 text-md relative z-10">See details</a>
-                        <span class="w-16 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
-                    </div>
-                </div>
-
-                <div class="education__section_card bg-purple-50 px-8 py-10 rounded-md">
-                    <h4 class="font-medium text-purple-700 text-lg mb-4">2022</h4>
-                    <p class="font-normal text-purple-500 text-md mb-4">
-                        Frontend Web Development Nanodegree <br>
-                        YouTube <br>
-                        CSS frameworks, JavaScript, ES6, asynchronous programming, and modern tooling
-                    </p>
-                    <div class="relative">
-                        <h6 class="font-semibold text-purple-500 text-md relative z-10">View Certificate</h6>
-                        <span class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
-                    </div>
-                </div>
-
-                <div class="education__section_card bg-purple-50 px-8 py-10 rounded-md">
-                    <h4 class="font-medium text-purple-700 text-lg mb-4">2022</h4>
-                    <p class="font-normal text-purple-500 text-md mb-4">
-                        React – The Complete Guide <br>
-                        Academind / Udemy <br>
-                        Deep dive into React, Redux, hooks, context API, and deployment strategies
-                    </p>
-                    <div class="relative">
-                        <h6 class="font-semibold text-purple-500 text-md relative z-10">View Certificate</h6>
-                        <span class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
-                    </div>
-                </div>
-
-                <div class="education__section_card bg-purple-50 px-8 py-10 rounded-md">
-                    <h4 class="font-medium text-purple-700 text-lg mb-4">2024 – 2027</h4>
-                    <p class="font-normal text-purple-500 text-md mb-4">
-                        Bachelor of Science <br>
-                        Lagos State University
-                    </p>
-                    <div class="relative">
-                        <a href="https://www.lasu.edu.ng/" class="font-semibold text-purple-500 text-md relative z-10">View Certificate</a>
-                        <span class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
-                    </div>
-                </div>
+                <a href="#projects" class="inline-block bg-purple-700 hover:bg-purple-800 text-white px-8 py-3 rounded-full text-lg font-semibold transition">View All Projects</a>
             </div>
         </div>
     </section>
@@ -480,19 +419,19 @@
                 </p>
                 <div class="flex items-center justify-center space-x-8">
                     <a href="mailto:officialsammy61@gmail.com" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
-                        <i class="bx bxs-envelope text-purple-500 hover:text-purple-800 transition ease-in-out duration-500"></i>
+                        <i class="bx bxs-envelope text-purple-500 hover:text-purple-800 transition ease-in-out duration-500 text-3xl"></i>
                     </a>
                     <a href="tel:+2349132713169" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
-                        <i class="bx bxs-phone-call text-purple-500 hover:text-purple-700 transition ease-in-out duration-500"></i>
+                        <i class="bx bxs-phone-call text-purple-500 hover:text-purple-700 transition ease-in-out duration-500 text-3xl"></i>
                     </a>
                     <a href="https://www.x.com/thelotmaster" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
-                        <i class="bx bxl-twitter text-purple-500 hover:text-purple-700 transition ease-in-out duration-500"></i>
+                        <i class="bx bxl-twitter text-purple-500 hover:text-purple-700 transition ease-in-out duration-500 text-3xl"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/samuel-amanze-05316b27a/" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
-                        <i class="bx bxl-linkedin text-purple-500 hover:text-purple-700 transition ease-in-out duration-500"></i>
+                        <i class="bx bxl-linkedin text-purple-500 hover:text-purple-700 transition ease-in-out duration-500 text-3xl"></i>
                     </a>
                     <a href="https://github.com/thedesigngrandmaster" target="_blank" class="footer__link w-16 h-16 flex items-center justify-center rounded-full hover:bg-purple-200 transition ease-in-out duration-500">
-                        <i class="bx bxl-github text-purple-500 hover:text-purple-700 transition ease-in-out duration-500"></i>
+                        <i class="bx bxl-github text-purple-500 hover:text-purple-700 transition ease-in-out duration-500 text-3xl"></i>
                     </a>
                 </div>
             </div>
@@ -605,43 +544,4 @@
                             <h3 class="text-2xl font-semibold text-purple-700 mb-4">Technologies Used</h3>
                             <div class="flex flex-wrap gap-3">
                                 ${project.technologies.map(tech => `
-                                    <span class="bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium">${tech}</span>
-                                `).join('')}
-                            </div>
-                        </div>
-
-                        <div class="mb-8">
-                            <h3 class="text-2xl font-semibold text-purple-700 mb-4">Key Features</h3>
-                            <ul class="space-y-3">
-                                ${project.features.map((feature, index) => `
-                                    <li class="feature-item flex items-start">
-                                        <i class='bx bx-check-circle text-purple-600 text-2xl mr-3 flex-shrink-0'></i>
-                                        <span class="text-gray-700 text-lg">${feature}</span>
-                                    </li>
-                                `).join('')}
-                            </ul>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <a href="${project.link}" target="_blank" class="inline-flex items-center px-6 py-3 bg-purple-700 text-white rounded-lg font-semibold hover:bg-purple-800 transition">
-                                <i class='bx bx-link-external mr-2 text-xl'></i>
-                                Visit Live Site
-                            </a>
-                            <button onclick="closeProjectDetail()" class="inline-flex items-center px-6 py-3 bg-purple-100 text-purple-700 rounded-lg font-semibold hover:bg-purple-200 transition">
-                                <i class='bx bx-arrow-back mr-2 text-xl'></i>
-                                Back
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `;
-
-            detailPage.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeProjectDetail() {
-            const detailPage = document.getElementById('projectDetailPage');
-            detailPage.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
+                                    <span class="
